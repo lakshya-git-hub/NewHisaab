@@ -1,0 +1,167 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  darkMode: ["class"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  prefix: "",
+  theme: {
+    container: {
+      center: true,
+      padding: "1rem",
+      screens: {
+        "2xl": "1280px",
+      },
+    },
+    extend: {
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "rgb(247, 181, 0)",
+          foreground: "rgb(17, 24, 39)",
+          50: "rgb(255, 252, 235)",
+          100: "rgb(254, 243, 199)",
+          200: "rgb(253, 230, 138)",
+          300: "rgb(252, 211, 77)",
+          400: "rgb(251, 191, 36)",
+          500: "rgb(247, 181, 0)",
+          600: "rgb(217, 156, 0)",
+          700: "rgb(180, 127, 0)",
+          800: "rgb(146, 95, 0)",
+          900: "rgb(120, 74, 0)",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        // MyHisaab specific colors
+        amber: {
+          50: "rgb(255, 252, 235)",
+          100: "rgb(254, 243, 199)",
+          200: "rgb(253, 230, 138)",
+          300: "rgb(252, 211, 77)",
+          400: "rgb(251, 191, 36)",
+          500: "rgb(247, 181, 0)",
+          600: "rgb(217, 156, 0)",
+          700: "rgb(180, 127, 0)",
+          800: "rgb(146, 95, 0)",
+          900: "rgb(120, 74, 0)",
+        },
+        warning: {
+          DEFAULT: "rgb(165, 121, 0)",
+          light: "rgb(255, 240, 194)",
+        },
+        success: {
+          DEFAULT: "rgb(16, 185, 129)",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+        xs: "8px",
+        xl: "16px",
+        "2xl": "24px",
+      },
+      fontFamily: {
+        sans: ['"Product Sans"', "system-ui", "sans-serif"],
+        product: ['"Product Sans"', "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        xs: "12px",
+        sm: "14px",
+        base: "16px",
+        lg: "18px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "30px",
+        "4xl": "36px",
+        "5xl": "48px",
+        "6xl": "60px",
+      },
+      spacing: {
+        "18": "4.5rem",
+        "22": "5.5rem",
+        "26": "6.5rem",
+        "30": "7.5rem",
+        "34": "8.5rem",
+        "38": "9.5rem",
+        "42": "10.5rem",
+        "46": "11.5rem",
+        "50": "12.5rem",
+        "54": "13.5rem",
+        "58": "14.5rem",
+        "62": "15.5rem",
+        "66": "16.5rem",
+        "70": "17.5rem",
+        "74": "18.5rem",
+        "78": "19.5rem",
+        "82": "20.5rem",
+        "86": "21.5rem",
+        "90": "22.5rem",
+        "94": "23.5rem",
+        "98": "24.5rem",
+        "102": "25.5rem",
+        "106": "26.5rem",
+        "110": "27.5rem",
+        "114": "28.5rem",
+        "118": "29.5rem",
+        "122": "30.5rem",
+        "126": "31.5rem",
+        "130": "32.5rem",
+      },
+      boxShadow: {
+        light: "rgba(0, 0, 0, 0.05) 0px 4px 6px -1px",
+        medium: "rgba(0, 0, 0, 0.05) 0px 10px 15px -3px",
+        heavy: "rgba(0, 0, 0, 0.1) 0px 10px 15px -3px",
+        glow: "0 0 32px rgba(247, 181, 0, 0.15)",
+      },
+      animation: {
+        "fade-in": "fade-in 0.5s ease-out",
+        "slide-in": "slide-in 0.5s ease-out",
+        "bounce-gentle": "bounce-gentle 2s infinite",
+      },
+      keyframes: {
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "slide-in": {
+          "0%": { opacity: "0", transform: "translateX(-10px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        "bounce-gentle": {
+          "0%, 20%, 50%, 80%, 100%": { transform: "translateY(0)" },
+          "40%": { transform: "translateY(-5px)" },
+          "60%": { transform: "translateY(-3px)" },
+        },
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
+
+export default config;
